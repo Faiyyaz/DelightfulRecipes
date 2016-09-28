@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.khatri.delightfulrecipes.MainActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:id="@+id/view"
+            android:background="@android:color/white">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CATEGORY OF DISHES"
+                    android:id="@+id/tvcategory"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veg Starters"
+                    android:id="@+id/vstarters"
+                    android:layout_weight="5"
+                    android:drawableTop="@drawable/vegstarters"
+                    style="@style/admin_buttons"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Non Veg Starters"
+                    android:id="@+id/nvstarters"
+                    android:layout_weight="5"
+                    android:drawableTop="@drawable/nonvegstarters"
+                    style="@style/admin_buttons"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Veg Main Course"
+                    android:id="@+id/vmcourse"
+                    android:layout_weight="5"
+                    android:drawableTop="@drawable/vegmaincourse"
+                    style="@style/admin_buttons"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Non Veg Main Course"
+                    android:id="@+id/nvmcourse"
+                    android:drawableTop="@drawable/nonvegmaincourse"
+                    style="@style/admin_buttons"
+                    android:layout_weight="6.57" />
+            </LinearLayout><LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="rice"
+                android:id="@+id/rice"
+                android:layout_weight="5"
+                android:drawableTop="@drawable/rice"
+                style="@style/admin_buttons"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dessert"
+                android:id="@+id/dessert"
+                android:layout_weight="8.76"
+                android:drawableTop="@drawable/dessert"
+                style="@style/admin_buttons"/>
+        </LinearLayout><LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salads"
+                android:id="@+id/salad"
+                android:layout_weight="5"
+                android:drawableTop="@drawable/salads"
+                style="@style/admin_buttons"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Occassionals"
+                android:id="@+id/occassion"
+                android:layout_weight="6.57"
+                android:drawableTop="@drawable/occassion"
+                style="@style/admin_buttons"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
