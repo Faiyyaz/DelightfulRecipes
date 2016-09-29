@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -39,8 +41,8 @@ public class Vegmaincourse extends AppCompatActivity {
         try {
             cursor = db.rawQuery("SELECT * FROM vegmain ORDER BY name ASC", null);
             adapter = new SimpleCursorAdapter(this, R.layout.isi_lv, cursor,
-                    new String[] { "name", "ingredient", "img" }, new int[] {
-                    R.id.tv_name, R.id.tvIngredient, R.id.imV });
+                    new String[]{"name", "ingredient", "img"}, new int[]{
+                    R.id.tv_name, R.id.tvIngredient, R.id.imV});
             lv.setAdapter(adapter);
             lv.setTextFilterEnabled(true);
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -64,13 +66,13 @@ public class Vegmaincourse extends AppCompatActivity {
         if (!edit_db.equals("")) {
             try {
                 cursor = db.rawQuery("SELECT * FROM vegmain WHERE name LIKE ?",
-                        new String[] { "%" + edit_db + "%" });
+                        new String[]{"%" + edit_db + "%"});
                 adapter = new SimpleCursorAdapter(
                         this,
                         R.layout.isi_lv,
                         cursor,
-                        new String[] { "name", "ingredient", "img" },
-                        new int[] { R.id.tv_name, R.id.tvIngredient, R.id.imV });
+                        new String[]{"name", "ingredient", "img"},
+                        new int[]{R.id.tv_name, R.id.tvIngredient, R.id.imV});
                 if (adapter.getCount() == 0) {
                     Toast.makeText(
                             this,
@@ -90,8 +92,8 @@ public class Vegmaincourse extends AppCompatActivity {
                         this,
                         R.layout.isi_lv,
                         cursor,
-                        new String[] { "name", "ingredient", "img" },
-                        new int[] { R.id.tv_name, R.id.tvIngredient, R.id.imV });
+                        new String[]{"name", "ingredient", "img"},
+                        new int[]{R.id.tv_name, R.id.tvIngredient, R.id.imV});
                 lv.setAdapter(adapter);
                 lv.setTextFilterEnabled(true);
             } catch (Exception e) {
@@ -121,5 +123,24 @@ public class Vegmaincourse extends AppCompatActivity {
         iIntent.putExtra("dataMethod", method);
         setResult(RESULT_OK, iIntent);
         startActivityForResult(iIntent, 99);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);//Menu Resource, Menu
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about:
+                Intent about = new Intent(getApplicationContext(), About.class);
+                startActivity(about);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -3,6 +3,8 @@ package com.khatri.delightfulrecipes;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -54,30 +56,47 @@ public class MainActivity extends AppCompatActivity {
         rice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent rice=new Intent(getApplicationContext(),ComingSoon.class);
+                Intent rice=new Intent(getApplicationContext(),Rice.class);
                 startActivity(rice);
             }
         });
         dessert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent dessert=new Intent(getApplicationContext(),ComingSoon.class);
+                Intent dessert=new Intent(getApplicationContext(),Dessert.class);
                 startActivity(dessert);
             }
         });
         salad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent salad=new Intent(getApplicationContext(),ComingSoon.class);
+                Intent salad=new Intent(getApplicationContext(),Salad.class);
                 startActivity(salad);
             }
         });
         occassion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent occassion=new Intent(getApplicationContext(),ComingSoon.class);
+                Intent occassion=new Intent(getApplicationContext(),Occasion.class);
                 startActivity(occassion);
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);//Menu Resource, Menu
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about:
+                Intent about=new Intent(getApplicationContext(),About.class);
+                startActivity(about);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

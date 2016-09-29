@@ -27,6 +27,11 @@
         <activity android:name=".ComingSoon"/>
         <activity android:name=".Vegmaincourse"/>
         <activity android:name=".Nonvegmaincourse"/>
+        <activity android:name=".Rice"/>
+        <activity android:name=".Occasion"/>
+        <activity android:name=".Salad"/>
+        <activity android:name=".Dessert"/>
+        <activity android:name=".About"/>
     </application>
 
 </manifest>

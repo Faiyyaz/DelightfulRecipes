@@ -11,7 +11,7 @@ public class DB_Recipe extends SQLiteOpenHelper {
     final static String DB_NAME = "db_recipe";
 
     public DB_Recipe(Context context) {
-        super(context, DB_NAME, null, 1);
+        super(context, DB_NAME, null, 3);
         // TODO Auto-generated constructor stub
     }
 
@@ -22,11 +22,19 @@ public class DB_Recipe extends SQLiteOpenHelper {
         String sql2 = "CREATE TABLE IF NOT EXISTS nonvegstarters(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, ingredient TEXT, method TEXT, img BLOB)";
         String sql3 = "CREATE TABLE IF NOT EXISTS vegmain(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, ingredient TEXT, method TEXT, img BLOB)";
         String sql4 = "CREATE TABLE IF NOT EXISTS nonvegmain(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, ingredient TEXT, method TEXT, img BLOB)";
+        String sql5 = "CREATE TABLE IF NOT EXISTS rice(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, ingredient TEXT, method TEXT, img BLOB)";
+        String sql6 = "CREATE TABLE IF NOT EXISTS dessert(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, ingredient TEXT, method TEXT, img BLOB)";
+        String sql7 = "CREATE TABLE IF NOT EXISTS occasion(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, ingredient TEXT, method TEXT, img BLOB)";
+        String sql8 = "CREATE TABLE IF NOT EXISTS salad(_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, ingredient TEXT, method TEXT, img BLOB)";
         db.execSQL(sql);
         db.execSQL(sql1);
         db.execSQL(sql2);
         db.execSQL(sql3);
         db.execSQL(sql4);
+        db.execSQL(sql5);
+        db.execSQL(sql6);
+        db.execSQL(sql7);
+        db.execSQL(sql8);
 
         ContentValues values = new ContentValues();
         values.put("_id", "1");
@@ -877,6 +885,595 @@ public class DB_Recipe extends SQLiteOpenHelper {
                 "Enjoy! :)");
         values.put("img", R.drawable.acharichicken);
         db.insert("nonvegmain", "_id", values);
+
+        values.put("_id", "1");
+        values.put("name", "Egg Biryani");
+        values.put("ingredient",
+                "For Rice\n" +
+                        "Basmati Rice - 3 cups (1 cup = 235 ml) (little more than half a kg of rice)\n" +
+                        "Saffron - a pinch (soaked in 2 tbsp of milk)\n" +
+                        "Whole Garam Masala - (2\" cinnamon stick, 4 cloves, 3 cardamom, 1 Bay Leaf, 1 star anise, 1 bay leaf)\n" +
+                        "Shahi Jeera - 1 tsp (or use Fennel seeds)\n" +
+                        "Oil - 1 tbsp\n" +
+                        "Salt - as needed\n" +
+                        "Water - about 12 cups (1 cup = 235 ml)\n" +
+                        "Mint Leaves - handful \n" +
+                        "Ghee - 1 tbsp\n" +
+                        "Fried Onion (Birista) - 1/4 cup\n" +
+                        "For Cooking Eggs\n" +
+                        "Eggs - 4 (for making  Hard Boiled eggs)\n" +
+                        "Eggs - 5 (for making scrambled eggs)\n" +
+                        "Oil - 2 tbsp\n" +
+                        "Salt - as needed\n" +
+                        "Pepper powder - as needed\n" +
+                        "Corn flour - 1 tbsp\n" +
+                        "Garam Masala / Biryani Masala - 1 tsp\n" +
+                        "For Masala\n" +
+                        "Onion - 2 medium (chopped)\n" +
+                        "Tomatoes - 2 (chopped)\n" +
+                        "Ginger garlic Paste - 1 tbsp\n" +
+                        "Cilantro (Coriander Leaves) - handful (finely chopped)\n" +
+                        "Mint Leaves - handful (chopped)\n" +
+                        "Green Chilies -  5 (chopped/slit)\n" +
+                        "Yogurt (curd) - 4-5 tbsp\n" +
+                        "Lemon Juice - 2 tbsp\n" +
+                        "Ghee - 2 tbsp\n" +
+                        "Oil - 2 tbsp\n" +
+                        "Biryani Masala - 1.5 tbsp (You can also substitute with 1 tsp chili powder, 1 tsp coriander powder, 1/2 tsp cumin powder, 1 tsp garam masala and 1/4 tsp turmeric powder)\n" +
+                        "Salt - as needed\n" +
+                        "Preparation Steps\n" +
+                        "For Preparing Eggs\n" +
+                        "Hard boil 4 eggs, peel it and cut it into half lengthwise.\n" +
+                        "Sprinkle a pinch of biryani masala, little salt and little corn flour (or rice flour) on the eggs and rub to coat it. Shallow fry it in a pan and keep it aside.\n" +
+                        "In the same pan, scramble the remaining 5 eggs with little salt and black pepper powder and keep aside.\n" +
+                        "For Cooking Rice\n" +
+                        "Wash and soak the rice for about half an hour while you prepare the eggs.\n" +
+                        "Take a large pot filled with plenty of water (about 12 cups) and keep it on medium heat. Once it boils, add 1 tbsp oil, shahi jeera, whole garam masala and required salt. \n" +
+                        "Drain the soaked rice and add it to the boiling water. You can add a pinch of turmeric powder too if you want a bright yellow color. Cook for 5 minutes till the rice is partially cooked.\n" +
+                        "When the rice is 3/4 th cooked (i.e. it has a bite to it) , drain the water and spread it on a tray to cool.\n" +
+                        "For Making Masala (Spicy Gravy)\n" +
+                        "Heat ghee and oil in a pan and add the onions and green chilies. Sauté till the onions turns brown.\n" +
+                        "Add the ginger garlic paste and fry for a minute. Add the chopped mint leaves and cilantro (coriander leaves).\n" +
+                        "Add the tomatoes and cook till it gets mashed up.\n" +
+                        "Add the yogurt (curd), biryani masala and salt. Cook this till you get a nice masala and the oil separates from the masala.\n" +
+                        "Add lemon juice to the masala just before switching off.");
+        values.put("method","Dum Method\n" +
+                "Preheat the oven to 350 degree C (180 degree F) if you plan to make dum in the oven (baking method).\n" +
+                "The dum process can be done in a conventional oven or stove top. Take an aluminium tray which you can discard after one use or a roasting pan if you want to bake in the oven. If you want to do the layering in stove top, take a heavy bottomed vessel.\n" +
+                "Grease the bottom of the vessel/tray with some ghee or oil.\n" +
+                "Spread half of the cooked rice at the bottom. This will be the first layer. \n" +
+                "\n" +
+                "Pour the egg masala over the rice as the 2nd layer. \n" +
+                "\n" +
+                "Spread the scrambled eggs as the third layer over the masala. \n" +
+                "\n" +
+                "Next layer the remaining rice. Since I did not have a big pot, I had to cook the rice in 2 batches. I added turmeric powder when cooking one batch of rice and the other one I cooked plain. That's the reason the first layer has white rice and this layer has yellow rice. The final biryani will be very colorful and attractive. \n" +
+                "\n" +
+                "Drizzle the saffron flavored milk and 1 tbsp ghee over this. Sprinkle some fried onions, finely chopped cilantro, 1 tsp of garam masala and mint leaves on top.\n" +
+                "Arrange the hard boiled eggs on the top. \n" +
+                "\n" +
+                "Cover with an aluminium foil and seal all sides so that the steam wont be able to escape.\n" +
+                "Leave it in a 350 degree oven for half an hour. By this time the aroma of the biryani will fill the house. (If you are doing the dum on stove top, reduce the flame to the lowest setting and cook for about 20 minutes.) \n" +
+                "Gently fluff up and mix the rice before serving. This way the masala and scrambled egg will be evenly distributed in the rice. \n" +
+                "\n" +
+                "Pressure cooker (One Pot) Method\n" +
+                "If you plan to make the biryani without the dum process, you can do it in a heavy bottomed pan or in a pressure cooker. In this case, make the hard boiled eggs and scrambled eggs as above. Heat oil in the pressure cooker and make the masala as described above. Now add the exact measure of water (4.5 cups) for 3 cups of basmati rice (1:1.5 ratio) and bring to a boil. Add the soaked and drained rice to this and cook for 15 minutes on low flame. Switch off and let the pressure go down. Fluff up the rice and gently mix in the scrambled eggs, hard boiled eggs, fried onions and some more fresh mint leaves. Keep it covered for another 10 minutes for the flavors to mix in before serving.\n" +
+                "Serving suggestion\n" +
+                "Serve this egg biryani with some simple raita or any non-veg side-dish. It also goes well with the traditional ennai kathrikai served with biryanis.\n" +
+                "This tastes delicious with some pickle and potato chips too.\n" +
+                "Tips\n" +
+                "You can use the same recipe to make Fish Biryani and Shrimp Biryani.");
+        values.put("img", R.drawable.eggbiryani);
+        db.insert("rice", "_id", values);
+
+        values.put("_id", "2");
+        values.put("name", "Chana Biryani");
+        values.put("ingredient",
+                "Basmati Rice - 1 cup \n" +
+                        "Chickpeas (White or Black or Green) - 1/2 cup\n" +
+                        "Onion - 1 \n" +
+                        "Green Chillies - 2 \n" +
+                        "Ginger - 1\" piece \n" +
+                        "Garlic cloves - 5\n" +
+                        "Tomatoes - 2 (crushed) \n" +
+                        "Oil and/or ghee - 2 tbsp\n" +
+                        "Whole garam masala - 1\" piece cinnamon, 2 cloves, 1 bay leaf, 1 tsp of fennel seeds) \n" +
+                        "Biryani Masala (home made or any brand) - 1 tblsp (If you do not have biryani masala, add 1/4 tsp of turmeric Powder, 1 tsp red chilly powder and 1 tsp Garam masala powder)\n" +
+                        "Mint leaves (Pudhina) - 1/2 cup \n" +
+                        "Coriander leaves (Cilantro) - 1/2 cup (chopped)\n" +
+                        "Lemon Juice - 1-2 tsp (add as needed) \n" +
+                        "Salt - as needed");
+        values.put("method","Wash and soak the chickpeas overnight or for at least 6 hours. You can skip the above steps by using canned chickpeas.\n" +
+                "Wash and soak the basmati rice. Let the rice keep soaking while you get the other things done. \n" +
+                "Coarsely grind the following ingredients in a blender or mixie - onion, green chillies, ginger, garlic, mint leaves and whole garam masala.\n" +
+                "Heat the ghee in a pressure cooker. Add the above ground paste. Saute for 5 minutes. \n" +
+                "Add the biryani masala and fry for a minute.\n" +
+                "Next add the tomatoes and cook till the masala comes together. \n" +
+                "Add 1 3/4 cups of water and bring it to a boil. To make the biryani more rich, add 3/4 cup of coconut milk and 1 cup of water instead of full water.\n" +
+                "Add the soaked chickpeas, salt as needed, lemon juice and cilantro. Finally, drain the soaking rice and add to the boiling water. \n" +
+                "Close the cooker, put the pressure and reduce the flame. Cook on low heat for 15 minutes and switch off. \n" +
+                "Once the pressure is released, fluff the rice with a fork. Chana Biryani is ready to serve. Serve with any raita or gravies like ennai kathirikai, paneer butter masala, soya fry, egg kurma etc.\n" +
+                "Serving Suggestion\n" +
+                "Serve with any raita or gravies like ennai kathirikai, paneer butter masala, soya fry, egg kurma etc.");
+        values.put("img", R.drawable.chanabiryani);
+        db.insert("rice", "_id", values);
+
+        values.put("_id", "3");
+        values.put("name", "Malabar Prawn Biryani ");
+        values.put("ingredient",
+                "For Marinating\n" +
+                        "Prawns (or Shrimp) – ½ kg\n" +
+                        "Red Chili Powder – 1 tsp\n" +
+                        "Garam Masala – ¼ tsp\n" +
+                        "Turmeric Powder – ¼ tsp\n" +
+                        "Lemon Juice – 1 tsp\n" +
+                        "Ginger garlic paste – 1 tsp\n" +
+                        "Salt – 1 tsp\n" +
+                        "For Cooking Rice\n" +
+                        "Basmati Rice – 2 cups\n" +
+                        "Cardamom – 3\n" +
+                        "Cinnamon – 2” piece\n" +
+                        "Bay Leaf – 2\n" +
+                        "Cloves – 5\n" +
+                        "Oil – 1 tbsp\n" +
+                        "Salt-totaste\n" +
+                        "Fennel seeds (or cumin seeds) – 1 tsp\n" +
+                        "For Masala\n" +
+                        "Oil – 3-4 tbsp\n" +
+                        "Ghee – 2 tbsp\n" +
+                        "Onion – 2(about 1 cup sliced)\n" +
+                        "Ginger Garlic Paste – 2 tbsp\n" +
+                        "Tomato – 2(about 1 cup chopped)\n" +
+                        "Green Chilies – 4 (finely chopped)\n" +
+                        "Mint Leaves – 1/4 cup\n" +
+                        "Coriander Leaves – 1/4 cup\n" +
+                        "Curd – ¼ cup\n" +
+                        "Lemon Juice – 1 tsp\n" +
+                        "Garam Masala (or Biryani Masala)– 1 tsp\n" +
+                        "Red Chili Powder – ½ tsp\n" +
+                        "Black Pepper Powder – ¼ tsp\n" +
+                        "Turmeric Powder – ¼ tsp\n" +
+                        "For Layering\n" +
+                        "Cashews – 2-3 tbsp\n" +
+                        "Raisins – 2-3 tbsp\n" +
+                        "Mint Leaves – ¼ cup\n" +
+                        "Coriander Leaves – ¼ cup\n" +
+                        "Onion – 2(about 1.5 cups sliced) \n" +
+                        "Milk – 3 tbsp\n" +
+                        "Saffron – few strands\n" +
+                        "Garam Masala – ¼ tsp\n" +
+                        "Ghee – 2 tbsp\n" +
+                        "Oil – 2-3 tbsp");
+        values.put("method","Marinate the prawns with salt, red chili powder, ginger garlic paste, garam masala and lemon juice for about 10 minutes. Wash and soak the rice for about 30 minutes. I usually soak the rice and get the other things done. Similarly, soak the saffron strands in some warm milk.\n" +
+                "Heat a big heavy bottomed pot or a pressure cooker in which you plan to make the biryani. Add 2 tbsp of oil; first fry the cashews and raisins until golden brown. Remove  them using a slotted spoon and keep it aside.\n" +
+                "In the same oil, add the marinated shrimp (prawns) and fry for about 5 minutes. Remove it and keep it aside.\n" +
+                "Add another 2 tbsp. of oil and add the sliced onions. Add little salt and cook it for 30 minutes on medium flame till it gets browned. Remove the fried onions and keep it aside. We need it later for layering. You can fry the onions in a separate pan if you want to save time.\n" +
+                "After removing the onions, add little ghee to the same pan. Add the ginger garlic paste and fry for a minute.\n" +
+                " Add chopped tomatoes and green chilies.  Also add the chopped mint and coriander leaves. Saute till it gets mushed up.\n" +
+                " Add the dry spices – red chili powder, garam masala, turmeric powder and black pepper powder. Add the curd and lemon juice. Also, add 1/3rd of the fried onions. Mix everything together and cook for 2-3 minutes till you get a nice gravy.\n" +
+                "At this stage, mix in the fried prawns with this.\n" +
+                "Simultaneously in another big pot, bring plenty of water to boil. Add the oil, cinnamon, cardamom, cloves, bay leaf, fennel seeds and some salt. Add the soaked rice. Cook until the rice is 3/4th cooked i.e. it should have a bite to it. Drain the rice and keep it ready for layering.\n" +
+                "In the pot with the masala gravy and the prawns, spread the masala evenly around the pan. Add the cooked rice as the second layer. You can add all the rice in a single batch if you are making a small quantity. For large quantities, 2-3 layers of the masala and rice can be made.\n" +
+                "After you add the rice layer, add finely chopped mint leaves, coriander leaves, fried onions, roasted cashews and raisins as the third layer. Add the saffron soaked milk on top of the rice. Also sprinkle some garam masala and add the ghee on top.\n" +
+                "Cover with a tight fitting lid and leave it on the lowest heat setting for about 20 minutes.\n" +
+                "Open the lid, fluff up the rice gently without breaking it. Enjoy.");
+        values.put("img", R.drawable.prawnbiryani);
+        db.insert("rice", "_id", values);
+
+        values.put("_id", "4");
+        values.put("name", "Chicken Biryani");
+        values.put("ingredient",
+                "Basmati rice - 3 cups \n" +
+                        "Chicken- 1 lb (1/2 kg) (cut into small pieces)\n" +
+                        "Onion -1 large/2 small ( cut lengthwise) \n" +
+                        "Tomato - 2 ( finely chopped or crushed)\n" +
+                        "Ginger garlic paste -1 tsp \n" +
+                        "Coriander leaves - ¼ cup (finely chopped)\n" +
+                        "Mint leaves - ¼ cup (finely chopped) \n" +
+                        "Green chillies - 5 no's (finely chopped)\n" +
+                        "Oil -3 tbsp \n" +
+                        "Ghee - 3 tbsp\n" +
+                        "Yoghurt -1/4 cup \n" +
+                        "Water Coconut milk mixture - 4.5 cups ( 1 cup coconut milk diluted with remaining water)\n" +
+                        "Salt - to taste \n" +
+                        "Chilly powder - 2 tsp ( or as needed)\n" +
+                        "Fennel Powder - 2 tbsp \n" +
+                        "Turmeric powder - ¼ tsp\n" +
+                        "Ingredients-2 ( For Marination)\n" +
+                        "Salt - ¼ tsp\n" +
+                        "Lemon juice /Yoghurt - 2 tblsp \n" +
+                        "Turmeric powder - ¼ tsp\n" +
+                        "Coriander powder - 1 tsp \n" +
+                        "Cumin Powder - 1 tsp\n" +
+                        "Garam Masala - 1 tsp \n" +
+                        "Pepper powder - ½ tsp\n" +
+                        "Chilly Powder - 1 tsp \n" +
+                        "Ginger garlic paste -1 tsp\n" +
+                        "Garam Masala\n" +
+                        "Bay leaf - 2\n" +
+                        "Cinnamon - 4 \n" +
+                        "Star Anise - 2\n" +
+                        "Cloves -5 \n" +
+                        "Cardamom -3 ");
+        values.put("method","Wash and cut chicken into small pieces. Marinate using all ingredients from list-2 and let it rest in the refrigerator for at least half an hour. \n" +
+                "Rinse the rice, soak it for at least 15 minutes, drain all water from it and keep aside. \n" +
+                "Optionally, toast the rice with some ghee till a nice aroma comes. This will make the biryani even more flavorful and prevent the rice from sticking to each other. You can omit this step if you don't have time.\n" +
+                "Method\n" +
+                "In a heavy deep vessel/ pressure cooker heat oil and ghee together. Once it gets heated up, add the whole garam masala. You can grind the garam masala and add it if you do not like whole masala coming in your mouth. \n" +
+                "Slowly add onions along with chopped green chillies. \n" +
+                "When onions turn slightly brown and crispy add ginger garlic paste, chopped coriander and mint leaves. \n" +
+                "Next add tomatoes and sauté for a while till the oil separates. \n" +
+                "Now add marinated chicken along with turmeric powder, chilly powder, fennel powder, yoghurt and salt. Sauté everything for 5-10 minutes until it thickens to a gravy consistency. \n" +
+                "NOTE: If you are making biryani with mutton or pork, you have to cook it completely before adding the rice.\n" +
+                "After this step, you can proceed in any of the following ways :-\n" +
+                "Using a pressure cooker\n" +
+                "Add the coconut milk and water mixture to the gravy and bring it to a boil. Add the soaked rice, check for salt and bring it to a boil again. \n" +
+                "Cover the pressure cooker and put the whistle, reduce the flame to the simmer and let it cook for 20-30 minutes. (You may not get any whistle as the flame is very low. Just switch off after 20-30 minutes and the biryani will be done. If you increase the flame, there are chances that the bottom might get burned.)  \n" +
+                "Using a rice cooker\n" +
+                "Add the gravy and soaked rice to the rice cooker along with water and coconut milk mixture and mix well. \n" +
+                "Check for salt and cook them in a rice cooker.  \n" +
+                "Using a heavy bottomed pan\n" +
+                "Add the coconut milk and water mixture to the gravy and bring it to a boil. Add the soaked rice, check for salt and bring it to a boil again. \n" +
+                "Cover the pan with a tight lid to prevent the steam from escaping. Reduce the flame to the lowest possible setting and leave it for half an hour. (You can use a aluminium foil to cover the top of the pan and then put the lid if the lid is not very tight. That way no steam will escape.) \n" +
+                "Cooking in convectional oven\n" +
+                "Add the gravy and soaked rice to a oven safe dish along with water and coconut milk mixture and mix well. \n" +
+                "Check for salt, cover the dish with an aluminium foil to prevent the steam from escaping and cook it for 45 minutes in a 350 degree oven. \n" +
+                "Cooking in Microwave Oven \n" +
+                "Add the gravy and soaked rice to a microwave safe dish/ micro cooker along with water and coconut milk mixture and mix well. \n" +
+                "Check for salt, cover the dish and cook it on micro power high for 20 minutes. \n" +
+                "Finally whatever method you use, the outcome is a flavourful, mouth watering biryani. Garnish with coriander leaves, toasted cashew nuts and raisins.\n" +
+                "Serving Suggestions\n" +
+                "Biryani is usually accompanied by a cool raita. \n" +
+                "Other sidedishes for biryani include hard boiled eggs, chicken fry, kaadai fry, ennai kathrikai, chicken curry, chicken 65, achari murg, mint chutney etc.");
+        values.put("img", R.drawable.chickenbiryani);
+        db.insert("rice", "_id", values);
+
+        values.put("_id", "5");
+        values.put("name", "Mushroom Soya Biryani");
+        values.put("ingredient",
+                "Mushroom - 1 lb /1/2 kg ( cut into small pieces) \n" +
+                        "Soya Chunks - 1 cup\n" +
+                        "Basmati rice - 2 cups\n" +
+                        "Onion -1 large ( cut lengthwise)\n" +
+                        "Tomato - 2 ( finely chopped or crushed)\n" +
+                        "Ginger garlic paste - 2  tsp\n" +
+                        "Corrainder leaves - ¼ cup (finely chopped)\n" +
+                        "Mint leaves - ¼ cup (finely chopped)\n" +
+                        "Green chillies - 3 nos (finely chopped)\n" +
+                        "Oil - 3 tblsp\n" +
+                        "Ghee - 3 tblsp\n" +
+                        "Coconut milk -½ cup\n" +
+                        "Water -3 cups\n" +
+                        "Yogurt - 2 tblsp\n" +
+                        "Salt - to taste\n" +
+                        "Chilly powder - 2 tsp\n" +
+                        "Coriander- Cumin powder - 2 tsp\n" +
+                        "Fennel Powder - ½ tsp\n" +
+                        "Turmeric powder - ¼ tsp\n" +
+                        "Whole Garam Masala - (Bay leaf - 1, Cinnamon - 2, Cloves - 5, Cardamon - 3)");
+        values.put("method","Wash and cut chicken into small pieces. Marinate using all ingredients from list-2 and let it rest in the refrigerator for at least half an hour. \n" +
+                "Rinse the rice, soak it for at least 15 minutes, drain all water from it and keep aside. \n" +
+                "Optionally, toast the rice with some ghee till a nice aroma comes. This will make the biryani even more flavorful and prevent the rice from sticking to each other. You can omit this step if you don't have time.\n" +
+                "Method\n" +
+                "Clean the mushroom with a wet kitchen towel to remove the dirt. Do not wash with water. \n" +
+                "Cut it lengthwise to retain the mushroom shape.\n" +
+                "Soak 2 cups of Basmati rice and the soya chunks seperately.\n" +
+                "In a heavy deep vessel heat oil and ghee together and fry the whole garam masala (bay leaf, cinnamon, cloves, cardomon).\n" +
+                "Add onions and saute till golden brown. Slowly add chopped green chilly, chopped corrainder and mint leaves while suateing the onions.\n" +
+                "When onions turn slightly brown and crispy add ginger garlic paste and tomatoes and sauté till it becomes a paste.\n" +
+                "Now add mushroom slices. Squeeze the water from the soya chunks and add it.\n" +
+                "Add the turmeric powder, chilly powder, corriander-cumin powder, fennel powder, yogurt,  coconut milk and salt. Saute everything until it thickens to a gravy consistency.\n" +
+                "Drain all water from the rice and put it in a rice cooker. Add the gravy to the rice along with water and mix well. Check for salt and switch on the rice cooker.\n" +
+                "After the biryani is done, gently fluff it up with a fork and garnish with corriander leaves. Serve hot with raita and some sidedish.\n" +
+                "Variations\n" +
+                "You can use one of the ingredients and make mushroom biryani or soya biryani alone.\n" +
+                "Serving Suggestion\n" +
+                "Enjoy the Mushroom and Soya Biryani with raitha as side. You can also have cauliflower fry or chicken fry as side");
+        values.put("img", R.drawable.mushroom);
+        db.insert("rice", "_id", values);
+
+        values.put("_id", "1");
+        values.put("name", "Quick Cherry Crisp");
+        values.put("ingredient",
+                "1/3-1/2 cup sugar\n" +
+                        "1 tablespoon cornstarch\n" +
+                        "4 cups frozen unsweetened pitted tart red cherries\n" +
+                        "1 cup crumbled shortbread cookies\n" +
+                        "2 tablespoons butter or margarine, melted\n" +
+                        "1/4 cup chopped pecans or almonds, toasted \n" +
+                        "Ice cream (optional)");
+        values.put("method","In a small bowl, combine sugar and cornstarch. In a large saucepan, sprinkle cornstarch mixture over cherries; stir to combine. Cook and stir over medium heat about 10 minutes or until thickened and bubbly. Cook and stir for 2 minutes more. \n" +
+                "Meanwhile, in a medium bowl, thoroughly combine crumbled cookies, butter, and nuts \n" +
+                "Divide cherry mixture among four dessert dishes. Sprinkle cookie mixture over cherry mixture. If desired, serve with ice cream.");
+        values.put("img", R.drawable.cherry);
+        db.insert("dessert", "_id", values);
+
+        values.put("_id", "2");
+        values.put("name", "Butterscotch-Pretzel Bars");
+        values.put("ingredient",
+                "Nonstick cooking spray\n" +
+                        "1 1/2 cups powdered sugar\n" +
+                        "1 cup creamy peanut butter\n" +
+                        "6 tablespoons butter, melted\n" +
+                        "2 cups crushed pretzels (about 6-1/2 ounces)\n" +
+                        "1 11 - ounce package (about 2 cups) butterscotch-flavored pieces\n" +
+                        "1/4 cup whipping cream\n" +
+                        "1/2 cup coarsely crushed pretzels\n" +
+                        "1/2 cup chopped peanutsNonstick cooking spray\n" +
+                        "1 1/2 cups powdered sugar\n" +
+                        "1 cup creamy peanut butter\n" +
+                        "6 tablespoons butter, melted\n" +
+                        "2 cups crushed pretzels (about 6-1/2 ounces)\n" +
+                        "1 11 - ounce package (about 2 cups) butterscotch-flavored pieces\n" +
+                        "1/4 cup whipping cream\n" +
+                        "1/2 cup coarsely crushed pretzels\n" +
+                        "1/2 cup chopped peanuts");
+        values.put("method","Line a 13x9x2-inch pan with foil. Lightly coat the foil with cooking spray; set aside. In a large mixing bowl, stir together powdered sugar, peanut butter, and melted butter. Stir in 2 cups crushed pretzels. Press mixture firmly into the bottom of prepared pan. \n" +
+                "In a heavy medium saucepan, combine butterscotch pieces and whipping cream. Stir over low heat until pieces are just melted. \n" +
+                "Carefully spoon and spread butterscotch mixture over crumb mixture in pan. Sprinkle 1/2 cup coarsely crushed pretzels and the peanuts evenly over butterscotch mixture; press gently. \n" +
+                "Cover and chill for at least 2 hours. Cut into bars to serve. Store in refrigerator for up to 1 week. ");
+        values.put("img", R.drawable.butterscotch);
+        db.insert("dessert", "_id", values);
+
+        values.put("_id", "3");
+        values.put("name", "Quick Whoopie Pies");
+        values.put("ingredient",
+                "1/2 of an 8-ounce package reduced-fat cream cheese (Neufchatel), softened\n" +
+                        "1/4 cup butter, softened\n" +
+                        "1/2 of a 7-ounce jar marshmallow creme\n" +
+                        "12 soft chocolate cookies or your favorite soft cookies");
+        values.put("method","For filling, in a medium mixing bowl beat cream cheese and butter with an electric mixer on medium to high speed until smooth and fluffy. Fold in marshmallow creme. \n" +
+                "Spread filling on bottoms of half of the cookies. Top with the remaining cookies, bottom sides down. For firmer filling, wrap and chill about 2 hours before serving. \n" +
+                "\n" +
+                "Variation\n" +
+                "Peanut Butter Whoopie Pies: Prepare as directed, except substitute 1/4 cup creamy peanut butter for the butter and use soft peanut butter or sugar cookies.");
+        values.put("img", R.drawable.whoopie);
+        db.insert("dessert", "_id", values);
+
+        values.put("_id", "4");
+        values.put("name", "Blackberry-Banana Lemon Trifle");
+        values.put("ingredient",
+                "1 4 - serving-size package instant vanilla pudding and pie filling mix\n" +
+                        "1 teaspoon finely shredded lemon peel\n" +
+                        "3 small bananas, sliced\n" +
+                        "1 cup fresh blackberries, blueberries, raspberries, or sliced strawberries\n" +
+                        "3 100-calorie pack shortbread cookies, coarsely broken\n" +
+                        "Lemon zest\n" +
+                        "Fresh mint leaves");
+        values.put("method","Prepare pudding mix according to package directions, stirring in lemon peel with milk. Transfer pudding to a serving bowl or dish. Top with sliced bananas, berries, and shortbread cookies. Garnish with lemon zest and fresh mint. \n" +
+                "\n" +
+                "Tip\n" +
+                "*Tip: If using vanilla pudding, stir 1/4 teaspoon finely shredded lemon peel into each of the containers of pudding.");
+        values.put("img", R.drawable.blackberry);
+        db.insert("dessert", "_id", values);
+
+        values.put("_id", "5");
+        values.put("name", "Mocha Chocolate Mousse");
+        values.put("ingredient",
+                "1 1/2 cups chocolate milk or milk\n" +
+                        "2 -3 teaspoons instant coffee crystals\n" +
+                        "1 4-serving-size package instant devil's food chocolate pudding mix\n" +
+                        "1 1 1/4 - ounce envelope whipped dessert topping mix\n" +
+                        "2 cups strawberry halves and/or banana chunks\n" +
+                        "Miniature semisweet chocolate pieces, chocolate sprinkles or chopped chocolate-covered espresso beans (optional)");
+        values.put("method","In a large bowl, combine milk and coffee crystals. Let stand for 5 minutes to dissolve crystals. \n" +
+                "Stir in pudding mix and dessert topping mix. Beat with an electric mixer on low speed about 30 seconds or until moistened. Beat on high speed about 4 minutes or until fluffy. Alternately spoon chocolate mousse and strawberries into 6 individual parfait glasses. Serve immediately or chill until serving time. If you like, garnish with chocolate pieces. Makes 6 servings.");
+        values.put("img", R.drawable.mocha);
+        db.insert("dessert", "_id", values);
+
+        values.put("_id", "1");
+        values.put("name", "Aloo Chaat");
+        values.put("ingredient",
+                "3 Potatoes (boiled and peeled) \n" +
+                        "1 tsp Chaat masala \n" +
+                        "1 tsp Roasted Cumin Powder \n" +
+                        "1 tbsp Tamarind Chutney \n" +
+                        "1/2 tbsp Mint Chutney \n" +
+                        "1/2 tsp Red Chilli Powder \n" +
+                        "Oil for frying \n" +
+                        "Chopped Coriander Leaves \n" +
+                        "Salt as per taste\n");
+        values.put("method","Chop the boiled potatoes into 3/4 inch cubes. \n" +
+                "Deep-fry the potatoes in oil in a wok till golden brown and well cooked. \n" +
+                "Drain excess oil on a paper. \n" +
+                "Put the fried potatoes in a bowl with cumin powder, red chilli powder, salt, chaat masala and mix thoroughly. \n" +
+                "Add tamarind chutney and mint chutney according to taste and mix properly. \n" +
+                "Garnish with fresh coriander leaves and serve.\n");
+        values.put("img", R.drawable.aloochaat);
+        db.insert("occasion", "_id", values);
+
+        values.put("_id", "2");
+        values.put("name", "Haleem");
+        values.put("ingredient",
+                "200 gm Wheat (washed and soaked for 2 hrs) \n" +
+                        "300 gm Boneless Mutton \n" +
+                        "100 gms Cooking oil \n" +
+                        "3 Onions (sliced) \n" +
+                        "2 Lime \n" +
+                        "2 tsp Garam Masala \n" +
+                        "Salt to taste\n" +
+                        "\n" +
+                        "For paste: \n" +
+                        "20 gm Fresh Green Chillies \n" +
+                        "2 inch piece Ginger \n" +
+                        "6-8 flakes Garlic \n");
+        values.put("method","Clean and marinate mutton with half of ground paste of ginger, garlic, green chillies and salt for 1 hour. \n" +
+                "Pressure cook the soaked wheat and marinated meat for about 45 minutes. \n" +
+                "Mince and grind to a fine paste. \n" +
+                "In a Pan heat oil, add the finely sliced onions, fry till brown, add the garam masala. \n" +
+                "Add the ground paste and keep stirring on slow flame, till the mixture leaves the sides of the pan. \n" +
+                "Serve hot, with lime wedges \n");
+        values.put("img", R.drawable.haleem);
+        db.insert("occasion", "_id", values);
+
+        values.put("_id", "3");
+        values.put("name", "Keema");
+        values.put("ingredient",
+                "1/2 kg Minced Beef \n" +
+                        "2 Tomatoes \n" +
+                        "1 Onion (finely chopped) \n" +
+                        "3 tbsp Oil \n" +
+                        "6 whole Black Peppers \n" +
+                        "6 Cloves \n" +
+                        "1 Black Cardamom \n" +
+                        "1/4 tsp Cumin \n" +
+                        "1tsp Coriander Power \n" +
+                        "Salt as per taste \n" +
+                        "1/4tsp Turmeric Powder \n" +
+                        "3/4tsp Chili Powder \n" +
+                        "2 tbsp Yogurt \n" +
+                        "1/2tsp Ginger Paste \n" +
+                        "1/4tsp Garlic Paste \n" +
+                        "Water as required \n");
+        values.put("method","Take oil in a pan and sauté the chopped onions in it. \n" +
+                "Add all the spices including ginger-garlic paste and fry for few seconds. \n" +
+                "Now add yoghurt and finely chopped tomatoes. \n" +
+                "Cook on medium heat till water is almost dried. \n" +
+                "Add mince meat mix and dry the water again. \n" +
+                "Then add 2 glasses of water, cover the lid and leave to tenderize and water dries. \n" +
+                "Garnish with fresh green coriander leaves and chopped green chillies.");
+        values.put("img", R.drawable.keema);
+        db.insert("occasion", "_id", values);
+
+        values.put("_id", "4");
+        values.put("name", "Kaju Burfi");
+        values.put("ingredient",
+                "3 cups Raw Cashew Nuts \n" +
+                        "2 cups Water \n" +
+                        "2 cups Sugar \n" +
+                        "Silver foil");
+        values.put("method","Grind the cashews to make a fine powder. \n" +
+                "Next prepare a sugar syrup by combining water and sugar together in a pot and heating them. \n" +
+                "Stir continuously until it has a 2-thread consistency. \n" +
+                "Turn off the flame. \n" +
+                "Dissolve cashew powder in the syrup. Make the solution thick. \n" +
+                "Spread the solution on a greased plate and put silver foil on it. \n" +
+                "Allow to cool and then cut it into pieces. \n" +
+                "Kaju Burfi is ready.");
+        values.put("img", R.drawable.kajubarfi);
+        db.insert("occasion", "_id", values);
+
+        values.put("_id", "5");
+        values.put("name", "Finger Chips");
+        values.put("ingredient",
+                "5 Potatoes \n" +
+                        "Oil for frying \n" +
+                        "Rocksalt to taste \n");
+        values.put("method","Cut potato into thin long strips. \n" +
+                "wash then and then make them dry completely. \n" +
+                "Add rocksalt as required. \n" +
+                "Deep fry potato strips in heated oil till it turns pink. \n" +
+                "Serve hot with tomato ketchup.");
+        values.put("img", R.drawable.fingerchips);
+        db.insert("occasion", "_id", values);
+
+        values.put("_id", "1");
+        values.put("name", "Avocado Grapefruit & Strawberry");
+        values.put("ingredient",
+                "1 medium avocadoor mango, peeled and sliced\n" +
+                        "1 medium grapefruit, segmented\n" +
+                        "3/4 cup strawberries, halved\n" +
+                        "1 tsp lemon juice\n" +
+                        "\n" +
+                        "For the dressing\n" +
+                        "2 tbsp vinegar\n" +
+                        "3 to 4 strawberries, finely chopped\n" +
+                        "2 tbsp oil\n" +
+                        "a pinch of salt\n" +
+                        "a pinch of sugar");
+        values.put("method","For the dressing, mix all the ingredients very well. Chill.\n" +
+                "Sprinkle the lemon juice over the avocado slices.\n" +
+                "Arrange the frutis decoratively on a serving plate. Chill. \n" +
+                "Serve with the chilled dressing.\n" +
+                "\n" +
+                "Tips\n" +
+                "Goodness Guide :\n" +
+                "This appetizing salad provides essential fatty acids and Vitamin C");
+        values.put("img", R.drawable.avocado);
+        db.insert("salad", "_id", values);
+
+        values.put("_id", "2");
+        values.put("name", "American Sweet Corn");
+        values.put("ingredient",
+                "3 cups boiled sweet corn kernels (makai ke dane)\n" +
+                        "1/2 cup chopped spring onions (whites and greens)\n" +
+                        "1/2 cup capsicum cubes\n" +
+                        "1/2 cup tomato cubes\n" +
+                        "\n" +
+                        "To Be Mixed Into A Vinaigrette Dressing\n" +
+                        "1 tbsp vinegar\n" +
+                        "2 tbsp olive oil\n" +
+                        "1/2 tsp mustard (rai / sarson) powder\n" +
+                        "1 tbsp sugar\n" +
+                        "salt and freshly ground black pepper (kalimirch) to taste");
+        values.put("method","Combine the sweet corn, spring onions, capsicum and tomatoes in a deep bowl and mix well.\n" +
+                "Pour the vinaigrette dressing over the salad, toss well and refrigerate for at least an hour.\n" +
+                "Serve chilled.");
+        values.put("img", R.drawable.sweetcorn);
+        db.insert("salad", "_id", values);
+
+        values.put("_id", "3");
+        values.put("name", "Arabic Salad");
+        values.put("ingredient",
+                "\n" +
+                        "To Be Mixed Into A Dressing\n" +
+                        "2 tbsp lemon juice\n" +
+                        "1/2 tsp baharat powder\n" +
+                        "1/4 tsp pomegranate seeds (anardana ) powder\n" +
+                        "salt to taste\n" +
+                        "\n" +
+                        "Other Ingredients\n" +
+                        "1 cup iceberg lettuce , torn into pieces\n" +
+                        "1/2 cup cherry tomatoes , halved\n" +
+                        "1/2 cup cucumber cubes\n" +
+                        "5 green olives , halved\n" +
+                        "5 black olives , halved\n" +
+                        "1/2 cup chopped mint leaves (phudina)");
+        values.put("method","Immerse the lettuce leaves in ice - cold water for 10 minutes and drain well. This will make them crisp.\n" +
+                "Combine all the ingredients in a bowl, pour the dressing on top and toss well.\n" +
+                "Serve immediately.");
+        values.put("img", R.drawable.arabicsoup);
+        db.insert("salad", "_id", values);
+
+        values.put("_id", "4");
+        values.put("name", "Arabic Salad");
+        values.put("ingredient",
+                "1 cup iceberg lettuce, torn into pieces\n" +
+                        "1/2 cup cherry tomatoes, halved\n" +
+                        "1/2 cup cucumber cubes\n" +
+                        "5 green olives\n" +
+                        "5 black olives\n" +
+                        "1/2 cup chopped mint leaves (phudina)\n" +
+                        "\n" +
+                        "To be mixed into a dressing\n" +
+                        "2 tbsp lemon juice\n" +
+                        "1/2 tsp Baharat\n" +
+                        "1/4 tsp pomegranate (anardana) powder\n" +
+                        "salt to taste");
+        values.put("method","Combine all the ingredients, pour the dressing on top and serve immediately.");
+        values.put("img", R.drawable.arabicsalad);
+        db.insert("salad", "_id", values);
+
+        values.put("_id", "5");
+        values.put("name", "Apple Banana & Date Salad");
+        values.put("ingredient",
+                "Ingredients\n" +
+                        "2 cups apple cubes (unpeeled)\n" +
+                        "1/2 cup sliced bananas\n" +
+                        "1/4 cup chopped dates (khajur)\n" +
+                        "\n" +
+                        "To Be Mixed Into A Dressing\n" +
+                        "1/4 cup readymade pineapple juice\n" +
+                        "1/4 tsp lemon rind\n" +
+                        "1/2 tsp lemon juice\n" +
+                        "1/4 tsp mustard (rai / sarson) powder\n" +
+                        "1 tsp powdered sugar\n" +
+                        "salt and to taste");
+        values.put("method","Combine all the ingredients along with the prepared dressing in a deep bowl and toss well.\n" +
+                "\n" +
+                "Serve immediately.");
+        values.put("img", R.drawable.apple);
+        db.insert("salad", "_id", values);
     }
 
     @Override
@@ -886,6 +1483,10 @@ public class DB_Recipe extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS nonvegstarters");
         db.execSQL("DROP TABLE IF EXISTS vegmain");
         db.execSQL("DROP TABLE IF EXISTS nonvegmain");
+        db.execSQL("DROP TABLE IF EXISTS rice");
+        db.execSQL("DROP TABLE IF EXISTS dessert");
+        db.execSQL("DROP TABLE IF EXISTS occasion");
+        db.execSQL("DROP TABLE IF EXISTS salad");
         onCreate(db);
     }
 }
